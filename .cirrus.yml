@@ -8,7 +8,7 @@
       - echo $CIRRUS_TASK_NAME:$CIRRUS_OS
       - ruby -v
       - cat Gemfile
-      - cat **/*.gemspec
+      - cat *.gemspec
     populate_script: bundle update
 
 remark_task:
