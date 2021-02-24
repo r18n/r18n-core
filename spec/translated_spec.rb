@@ -18,6 +18,10 @@ describe R18n::Translated do
     R18n.set('en')
   end
 
+  after do
+    R18n.reset!
+  end
+
   it 'saves methods map' do
     user_class.translation :name, methods: { ru: :name_ru }
     expect(user_class.unlocalized_getters(:name)).to eq('ru' => 'name_ru')
