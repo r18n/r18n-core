@@ -5,6 +5,14 @@ require 'pry-byebug'
 
 require 'active_support'
 
+require 'simplecov'
+SimpleCov.start
+
+if ENV['CODECOV_TOKEN']
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 require_relative '../lib/r18n-core'
 
 shared_context 'common core directories' do

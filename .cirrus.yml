@@ -37,4 +37,6 @@ test_task:
       image: ruby:2.6
       image: ruby:2.7
       image: ruby:3.0
+  environment:
+    CODECOV_TOKEN: ENCRYPTED[39c4ed9a5673bd7e9535a32b6acc788fa31e7b467f52e165c02c897f3e1f22ae59b1d2cb3659baa4bdb3f07d8356678c]
   test_script: bundle exec rspec
