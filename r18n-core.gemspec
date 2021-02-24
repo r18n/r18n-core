@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*.rb', 'base/**/*.y{a,}ml', 'README.md', 'LICENSE', 'ChangeLog.md']
   s.extra_rdoc_files = ['README.md', 'LICENSE']
 
-  s.author   = 'Andrey Sitnik'
-  s.email    = 'andrey@sitnik.ru'
+  s.authors  = ['Andrey Sitnik', 'Alexander Popov']
+  s.email    = ['andrey@sitnik.ru', 'alex.wayfer@gmail.com']
   s.homepage = 'https://github.com/r18n/r18n'
   s.license  = 'LGPL-3.0'
 
