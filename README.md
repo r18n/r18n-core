@@ -1,5 +1,13 @@
 # R18n Core
 
+[![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/r18n/r18n-core?style=flat-square)](https://cirrus-ci.com/github/r18n/r18n-core)
+[![Codecov branch](https://img.shields.io/codecov/c/github/r18n/r18n-core/master.svg?style=flat-square)](https://codecov.io/gh/r18n/r18n-core)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/r18n/r18n-core.svg?style=flat-square)](https://codeclimate.com/github/r18n/r18n-core)
+[![Depfu](https://img.shields.io/depfu/r18n/r18n-core?style=flat-square)](https://depfu.com/repos/github/r18n/r18n-core)
+[![Inline docs](https://inch-ci.org/github/r18n/r18n-core.svg?branch=master)](https://inch-ci.org/github/r18n/r18n-core)
+[![License](https://img.shields.io/github/license/r18n/r18n-core.svg?style=flat-square)](LICENSE)
+[![Gem](https://img.shields.io/gem/v/r18n-core.svg?style=flat-square)](https://rubygems.org/gems/r18n-core)
+
 [R18n](https://github.com/r18n/r18n) is an i18n tool to translate your Ruby application
 into several languages.
 
