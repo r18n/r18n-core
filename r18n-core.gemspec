@@ -20,8 +20,19 @@ Gem::Specification.new do |s|
 
   s.authors  = ['Andrey Sitnik', 'Alexander Popov']
   s.email    = ['andrey@sitnik.ru', 'alex.wayfer@gmail.com']
-  s.homepage = 'https://github.com/r18n/r18n'
   s.license  = 'LGPL-3.0'
+
+  github_uri = "https://github.com/r18n/#{s.name}"
+
+  s.homepage = github_uri
+
+  s.metadata = {
+    'bug_tracker_uri' => "#{github_uri}/issues",
+    'changelog_uri' => "#{github_uri}/blob/#{s.version}/ChangeLog.md",
+    'documentation_uri' => "http://www.rubydoc.info/gems/#{s.name}/#{s.version}",
+    'homepage_uri' => s.homepage,
+    'source_code_uri' => github_uri
+  }
 
   s.required_ruby_version = '>= 2.5', '< 4'
 
