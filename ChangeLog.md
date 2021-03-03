@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## 5.0.0 (Warszawa) (2021-03-04)
+
+* Take out `r18n-core` gem from mono-repository.
+* Avoid Ruby 4 in gem specs.
+* Add metadata to gem specs.
+* Add Alexander Popov as a gem author.
+* Fix phantom error in specs.
+* Replace `rake` with `toys`.
+* Add Codecov and SimpleCov.
+* Update RuboCop configuration.
+* Add badges into README.
+
 ## 4.0.0 (Santiago)
 
 * Drop Ruby 2.3 support (by Alexander Popov).
