@@ -5,13 +5,30 @@
 ## 5.0.0 (Warszawa) (2021-03-04)
 
 * Take out `r18n-core` gem from mono-repository.
+* Set `I18n#locale` with region by its parent equal to received locale.
+  For example, if project has `en-US` and `de-DE` locales,
+  and `Accept-Language` HTTP header contains only `de` — set `de-DE` as locale.
+* Add locales with regions as sublocales of each other.
+  And load them all, not only for the first! Recursively, I guess.
+* Don't use `en` as default sublocale, it's strange.
+* Remove block setters.
+  I don't know why (for what) they were here, they were introduced without any description.
+  I see no profit from such approach. Use regular `set` or justify the necessity, please.
+* Rename `UnpluralizetedTranslation` to `UnpluralizedTranslation` (more correct spelling).
+* Remake `i18n` and `now` arguments to keyword arguments for `localize` and `format_*` methods.
+* Allow Hashes with blocks for `named_variables` filter.
+  It forces Symbol keys, but it does not break specs and it's more flexible.
+* Fix custom `format_*` methods for classes with namespaces.
+* Drop Ruby 2.4 support.
+* Support Ruby 3.
 * Avoid Ruby 4 in gem specs.
 * Add metadata to gem specs.
 * Add Alexander Popov as a gem author.
-* Fix phantom error in specs.
+* Run specs in random order, fix phantom fails.
 * Replace `rake` with `toys`.
 * Add Codecov and SimpleCov.
-* Update RuboCop configuration.
+* Update RuboCop, its configuration, and resolve new offenses.
+* Fix many Ruby warnings.
 * Add badges into README.
 
 ## 4.0.0 (Santiago)
