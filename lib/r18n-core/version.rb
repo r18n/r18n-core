@@ -2,5 +2,5 @@
 
 # Version of R18n Core
 module R18n
-  VERSION = '5.0.0'
+  VERSION = '5.0.1'
 end
