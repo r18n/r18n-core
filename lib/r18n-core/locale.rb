@@ -87,13 +87,12 @@ module R18n
         name = capitalize(code)
         return unless name
 
-        @loaded[code] ||= begin
+        @loaded[code] ||=
           if exists?(code)
             R18n::Locales.const_get(name).new
           else
             UnsupportedLocale.new(code)
           end
-        end
       end
 
       # Set locale `properties`. Locale class will have methods
