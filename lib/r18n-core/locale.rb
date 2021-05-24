@@ -127,14 +127,16 @@ module R18n
       @parent = self.class.superclass.new
     end
 
-    set sublocales: [],
-        week_start: :monday,
-        time_am: 'AM',
-        time_pm: 'PM',
-        time_format: '_ %R',
-        time_with_seconds_format: '_ %T',
-        full_format: '%-d %B',
-        year_format: '_ %Y'
+    set(
+      sublocales: [],
+      week_start: :monday,
+      time_am: 'AM',
+      time_pm: 'PM',
+      time_format: '_ %R',
+      time_with_seconds_format: '_ %T',
+      full_format: '%-d %B',
+      year_format: '_ %Y'
+    )
 
     def month_standalone
       month_names

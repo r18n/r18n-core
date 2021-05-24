@@ -6,8 +6,10 @@ module R18n
   module Locales
     # Australian English locale
     class EnAU < En
-      set title: 'Australian English',
-          sublocales: %w[en en-US en-GB]
+      set(
+        title: 'Australian English',
+        sublocales: %w[en en-US en-GB]
+      )
     end
   end
 end
