@@ -77,7 +77,7 @@ module R18n
   #   translation :title, methods: { ru: :russian, en: :english}
   module Translated
     class << self
-      def included(base) #:nodoc:
+      def included(base)
         base.send :extend, Base
         base.instance_variable_set '@unlocalized_getters', {}
         base.instance_variable_set '@unlocalized_setters', {}
