@@ -55,7 +55,6 @@ module R18n
           'n'
         end
       end
-
     end
   end
 end
