@@ -179,7 +179,7 @@ module R18n
         matcher = Regexp.new("^#{Regexp.escape(method.to_s)}_(\\w+)$")
         unless @unlocalized_getters.key? method
           @unlocalized_getters[method] = {}
-          unlocalized_methods.select { |i| i =~ matcher }.each do |i|
+          unlocalized_methods.grep(matcher).each do |i|
             @unlocalized_getters[method][i.to_s.match(matcher)[1]] = i.to_s
           end
         end
@@ -193,7 +193,7 @@ module R18n
         matcher = Regexp.new("^#{Regexp.escape(method.to_s)}_(\\w+)=$")
         unless @unlocalized_setters.key? method
           @unlocalized_setters[method] = {}
-          unlocalized_methods.select { |i| i =~ matcher }.each do |i|
+          unlocalized_methods.grep(matcher).each do |i|
             @unlocalized_setters[method][i.to_s.match(matcher)[1]] = i.to_s
           end
         end
