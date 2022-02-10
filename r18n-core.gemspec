@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.5', '< 4'
 
-  s.add_development_dependency 'activesupport', '>= 5', '<= 7.0.0'
+  s.add_development_dependency 'activesupport', '>= 5', '<= 7.0.2'
   s.add_development_dependency 'kramdown', '~> 2.3'
   s.add_development_dependency 'pry-byebug', '~> 3.9'
   s.add_development_dependency 'RedCloth', '~> 4.3'
