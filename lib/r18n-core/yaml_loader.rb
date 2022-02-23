@@ -55,11 +55,11 @@ module R18n
         initialize_types
 
         translations = {}
-        Dir.glob(
-          File.join(@dir, "**/#{locale.code}.#{FILE_EXT}"), File::FNM_CASEFOLD
-        ).each do |i|
-          Utils.deep_merge!(translations, ::YAML.load_file(i) || {})
-        end
+        Dir.glob(File.join(@dir, "**/*.#{FILE_EXT}"))
+          .select { |file| File.basename(file, '.*').casecmp? locale.code }
+          .each do |i|
+            Utils.deep_merge!(translations, ::YAML.load_file(i) || {})
+          end
         transform(translations)
       end
 
