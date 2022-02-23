@@ -112,10 +112,10 @@ module R18n
       def translation(name, options = {})
         if options[:methods]
           @unlocalized_getters[name] =
-            options[:methods].map { |l, i| [l.to_s, i.to_s] }.to_h
+            options[:methods].to_h { |l, i| [l.to_s, i.to_s] }
           unless options[:no_write]
             @unlocalized_setters[name] =
-              options[:methods].map { |l, i| [l.to_s, "#{i}="] }.to_h
+              options[:methods].to_h { |l, i| [l.to_s, "#{i}="] }
           end
         end
 

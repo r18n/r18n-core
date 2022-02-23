@@ -34,7 +34,7 @@ module R18n
 
       def strftime(time, format)
         year = (time.year + 543).to_s
-        super(time, format.gsub('%Y', year).gsub('%y', year[-2..-1]))
+        super(time, format.gsub('%Y', year).gsub('%y', year[-2..]))
       end
     end
   end
