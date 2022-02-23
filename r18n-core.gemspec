@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'RedCloth', '~> 4.3'
 
   s.add_development_dependency 'gem_toys', '~> 0.11.0'
-  s.add_development_dependency 'toys', '~> 0.12.0'
+  s.add_development_dependency 'toys', '~> 0.13.0'
 
   s.add_development_dependency 'rubocop', '~> 1.25.1'
   s.add_development_dependency 'rubocop-performance', '~> 1.9'
