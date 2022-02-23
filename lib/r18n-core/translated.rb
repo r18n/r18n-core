@@ -79,8 +79,8 @@ module R18n
     class << self
       def included(base)
         base.send :extend, Base
-        base.instance_variable_set '@unlocalized_getters', {}
-        base.instance_variable_set '@unlocalized_setters', {}
+        base.instance_variable_set :@unlocalized_getters, {}
+        base.instance_variable_set :@unlocalized_setters, {}
       end
     end
 
