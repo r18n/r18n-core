@@ -65,7 +65,7 @@ module R18n
 
       # YAML loader with same `dir` will be have same `hash`.
       def hash
-        self.class.hash + @dir.hash
+        [self.class, @dir].hash
       end
 
       # Is another `loader` load YAML translations from same `dir`.
