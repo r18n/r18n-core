@@ -36,20 +36,4 @@ Gem::Specification.new do |s|
   }
 
   s.required_ruby_version = '>= 2.7', '< 4'
-
-  s.add_development_dependency 'activesupport', '>= 5', '< 8'
-  s.add_development_dependency 'kramdown', '~> 2.3'
-  s.add_development_dependency 'pry-byebug', '~> 3.9'
-  s.add_development_dependency 'RedCloth', '~> 4.3'
-
-  s.add_development_dependency 'gem_toys', '~> 0.12.1'
-  s.add_development_dependency 'toys', '~> 0.14.2'
-
-  s.add_development_dependency 'rubocop', '~> 1.53.0'
-  s.add_development_dependency 'rubocop-performance', '~> 1.9'
-  s.add_development_dependency 'rubocop-rake', '~> 0.6.0'
-
-  s.add_development_dependency 'rspec', '~> 3.10'
-  s.add_development_dependency 'simplecov', '~> 0.22.0'
-  s.add_development_dependency 'simplecov-cobertura', '~> 2.1'
 end
