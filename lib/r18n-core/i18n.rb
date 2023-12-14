@@ -195,12 +195,11 @@ module R18n
       @available_locales = @available_codes = nil
       @translation_places = self.class.convert_places(@original_places)
 
-      available_in_places = @translation_places.map { |i| [i, i.available] }
-      available_in_extensions =
-        R18n.extension_places.map { |i| [i, i.available] }
+      available_in_places = @translation_places.to_h { |i| [i, i.available] }
+      available_in_extensions = R18n.extension_places.to_h { |i| [i, i.available] }
 
       unless defined? @locale
-        available_in_places.each do |_place, available|
+        available_in_places.each_value do |available|
           @locales.each do |locale|
             if available.include? locale
               @locale = locale
