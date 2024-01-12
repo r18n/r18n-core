@@ -155,7 +155,7 @@ module R18n
 
         return if options[:no_write]
 
-        define_method "#{name}=" do |*params|
+        define_method :"#{name}=" do |*params|
           unlocalized = self.class.unlocalized_setters(name)
           r18n.locales.each do |locale|
             code = locale.code
