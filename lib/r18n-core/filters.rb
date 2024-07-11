@@ -242,10 +242,10 @@ module R18n
   end
 
   Filters.add(String, :variables) do |content, config, *params|
-    cached_params = []
+    cached_params = {}
     content.to_s.gsub(/%\d/) do |key|
-      i = key[1..].to_i
-      unless cached_params.include? i - 1
+      i = key[1].to_i
+      unless cached_params.key? i - 1
         param = config[:locale].localize(params[i - 1])
         param = ActiveSupport::SafeBuffer.new + param if defined? ActiveSupport::SafeBuffer
 
