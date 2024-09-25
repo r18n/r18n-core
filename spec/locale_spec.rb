@@ -93,15 +93,15 @@ describe R18n::Locale do
   it 'localizes date for human' do
     i18n = R18n::I18n.new('en')
 
-    expect(@en.localize(Date.today + 2, :human, i18n: i18n)).to eq('after 2 days')
-    expect(@en.localize(Date.today + 1, :human, i18n: i18n)).to eq('tomorrow')
-    expect(@en.localize(Date.today,     :human, i18n: i18n)).to eq('today')
-    expect(@en.localize(Date.today - 1, :human, i18n: i18n)).to eq('yesterday')
-    expect(@en.localize(Date.today - 3, :human, i18n: i18n)).to eq('3 days ago')
+    expect(@en.localize(Date.today + 2, :human, i18n:)).to eq('after 2 days')
+    expect(@en.localize(Date.today + 1, :human, i18n:)).to eq('tomorrow')
+    expect(@en.localize(Date.today,     :human, i18n:)).to eq('today')
+    expect(@en.localize(Date.today - 1, :human, i18n:)).to eq('yesterday')
+    expect(@en.localize(Date.today - 3, :human, i18n:)).to eq('3 days ago')
 
     y2k = Date.parse('2000-05-08')
-    expect(@en.localize(y2k, :human, now: y2k + 8, i18n: i18n)).to   eq('8th of May')
-    expect(@en.localize(y2k, :human, now: y2k - 365, i18n: i18n)).to eq('8th of May, 2000')
+    expect(@en.localize(y2k, :human, now: y2k + 8, i18n:)).to   eq('8th of May')
+    expect(@en.localize(y2k, :human, now: y2k - 365, i18n:)).to eq('8th of May, 2000')
   end
 
   it 'localizes times for human' do

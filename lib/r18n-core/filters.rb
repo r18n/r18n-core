@@ -193,7 +193,7 @@ module R18n
       end
 
       # Return filters, which be added inside `block`.
-      def listen(&_block)
+      def listen(&)
         filters = []
         @new_filter_listener = proc { |i| filters << i }
         yield
