@@ -23,7 +23,7 @@ module R18n
   class FilterList
     # Process `value` by filters in `enabled`.
     def process(filters_type, type, value, locale, path, params)
-      config = { locale: locale, path: path }
+      config = { locale:, path: }
 
       enabled(filters_type, type).each do |filter|
         value = filter.call(value, config, *params)

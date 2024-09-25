@@ -177,7 +177,7 @@ module R18n
     # `:full` ("01 Jule, 2009"), `:human` ("yesterday"),
     # `:standard` ("07/01/09") or `:month` for standalone month
     # name. Default format is `:standard`.
-    def localize(obj, format = nil, *args, **kwargs)
+    def localize(obj, format = nil, *, **kwargs)
       case obj
       when Integer
         format_integer(obj)
@@ -196,14 +196,14 @@ module R18n
           raise ArgumentError, "Unknown time formatter #{format}"
         end
 
-        send format_method_name, obj, *args, **kwargs
+        send format_method_name, obj, *, **kwargs
       else
         format_method_name =
           "format_#{Utils.underscore(obj.class.name).tr('/', '_')}_#{format}"
 
         return obj.to_s unless respond_to? format_method_name
 
-        send format_method_name, obj, *args, **kwargs
+        send format_method_name, obj, *, **kwargs
       end
     end
 
@@ -266,7 +266,7 @@ module R18n
       minutes = time.is_a?(DateTime) ? diff * 24 * 60.0 : diff / 60.0
       diff = minutes.abs
       if (diff > 24 * 60) || (time.mday != now.mday && diff > 12 * 24)
-        format_time(format_date_human(time.to_date, now: now.to_date, i18n: i18n), time)
+        format_time(format_date_human(time.to_date, now: now.to_date, i18n:), time)
       elsif minutes > -1 && minutes < 1
         i18n.human_time.now
       elsif minutes >= 60
@@ -281,14 +281,14 @@ module R18n
     end
 
     # Format `time` in compact form. For example, "12/31/09 12:59".
-    def format_time_standard(time, *args, **kwargs)
-      format_time(format_date_standard(time), time, *args, **kwargs)
+    def format_time_standard(time, *, **)
+      format_time(format_date_standard(time), time, *, **)
     end
 
     # Format `time` in most official form. For example, "December 31st, 2009
     # 12:59". For special cases you can replace it in locale's class.
-    def format_time_full(time, **kwargs)
-      format_time(format_date_full(time, **kwargs), time, **kwargs)
+    def format_time_full(time, **)
+      format_time(format_date_full(time, **), time, **)
     end
 
     # Format `date` in human usable form. For example "5 days ago" or "yesterday".

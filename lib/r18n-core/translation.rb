@@ -88,10 +88,10 @@ module R18n
           when Hash
             value = Translation.new(
               @locale, path,
-              locale: locale, translations: value, filters: @filters
+              locale:, translations: value, filters: @filters
             )
           when String
-            c = { locale: locale, path: path }
+            c = { locale:, path: }
             v = @filters.process_string(:passive, value, c, [])
             value = TranslatedString.new(v, locale, path, @filters)
           when Typed
