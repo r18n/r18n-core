@@ -33,6 +33,21 @@ describe R18n::Filters do
     expect(i18n.my_tree_filter).to eq('name' => 'value')
   end
 
+  it 'adds cached filter' do
+    filter = R18n::Filters.add('my', :params) { |i, _config| i }
+    expect(i18n.locale).to receive(:localize).exactly(2).times.and_call_original
+
+    expect(filter).to be_kind_of(R18n::Filters::Filter)
+    expect(filter.name).to eq(:params)
+    expect(filter.types).to eq(['my'])
+    expect(filter).to be_enabled
+
+    expect(R18n::Filters.defined).to have_key(:params)
+
+    expect(i18n.params('0', '1')).to eq('Is 0 between 0 and 1?')
+    expect(i18n.my_tree_filter).to eq('name' => 'value')
+  end
+
   it 'adds filter for several types' do
     R18n::Filters.add(%w[my your]) { |i, _config| "#{i}1" }
     expect(i18n.my_filter).to   eq('value1')
