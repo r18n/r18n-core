@@ -192,6 +192,12 @@ describe R18n::Filters do
     expect(i18n.params('0', '1')).to eq('Is 0 between 0 and 1?')
   end
 
+  it 'caches `nil` params in translation' do
+    expect(i18n.locale).to receive(:localize).exactly(2).times.and_call_original
+
+    expect(i18n.params(nil, 'something')).to eq('Is  between  and something?')
+  end
+
   it 'processes 2+ digits params in translation' do
     expect(
       i18n.a_lot_of_params(
