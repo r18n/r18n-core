@@ -17,8 +17,6 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'ostruct'
-
 # R18n filters definition
 module R18n
   # Filter is a way, to process translations: escape HTML entries, convert from
@@ -193,7 +191,7 @@ module R18n
       end
 
       # Return filters, which be added inside `block`.
-      def listen(&_block)
+      def listen(&)
         filters = []
         @new_filter_listener = proc { |i| filters << i }
         yield
@@ -242,16 +240,20 @@ module R18n
   end
 
   Filters.add(String, :variables) do |content, config, *params|
-    cached_params = []
-    content.to_s.gsub(/%\d/) do |key|
-      i = key[1..].to_i
-      unless cached_params.include? i - 1
-        param = config[:locale].localize(params[i - 1])
+    cached_params = {}
+
+    content.to_s.gsub(/%(\d+)/) do
+      ## In translation files we start with `%1`, in code we start with index `0`
+      i = ::Regexp.last_match(1).to_i - 1
+
+      unless cached_params.key?(i)
+        param = config[:locale].localize(params[i])
         param = ActiveSupport::SafeBuffer.new + param if defined? ActiveSupport::SafeBuffer
 
-        cached_params[i - 1] = param
+        cached_params[i] = param
       end
-      cached_params[i - 1]
+
+      cached_params[i]
     end
   end
 

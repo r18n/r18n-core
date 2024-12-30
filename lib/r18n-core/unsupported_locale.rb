@@ -61,10 +61,10 @@ module R18n
       @base.public_send(name, *params)
     end
 
-    def respond_to_missing?(name, *args)
+    def respond_to_missing?(name, *)
       return super unless @base
 
-      @base.send __method__, name, *args
+      @base.send(__method__, name, *)
     end
   end
 end
