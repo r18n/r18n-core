@@ -242,14 +242,15 @@ module R18n
   Filters.add(String, :variables) do |content, config, *params|
     cached_params = {}
     content.to_s.gsub(/%(\d)/) do
-      i = ::Regexp.last_match(1).to_i
-      unless cached_params.key?(i - 1)
-        param = config[:locale].localize(params[i - 1])
+      ## In translation files we start with `%1`, in code we start with index `0`
+      i = ::Regexp.last_match(1).to_i - 1
+      unless cached_params.key?(i)
+        param = config[:locale].localize(params[i])
         param = ActiveSupport::SafeBuffer.new + param if defined? ActiveSupport::SafeBuffer
 
-        cached_params[i - 1] = param
+        cached_params[i] = param
       end
-      cached_params[i - 1]
+      cached_params[i]
     end
   end
 
