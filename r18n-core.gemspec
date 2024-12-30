@@ -36,4 +36,6 @@ Gem::Specification.new do |s|
   }
 
   s.required_ruby_version = '>= 3.2', '< 4'
+
+  s.add_dependency 'bigdecimal', '~> 3.1'
 end
