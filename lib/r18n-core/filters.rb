@@ -242,7 +242,7 @@ module R18n
   Filters.add(String, :variables) do |content, config, *params|
     cached_params = {}
 
-    content.to_s.gsub(/%(\d)/) do
+    content.to_s.gsub(/%(\d+)/) do
       ## In translation files we start with `%1`, in code we start with index `0`
       i = ::Regexp.last_match(1).to_i - 1
 
