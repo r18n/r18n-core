@@ -6,7 +6,7 @@ module R18n
     class Sv < Locale
       set(
         title: 'Svenska',
-        sublocales: %w[sv],
+        sublocales: %w[sv-SE],
 
         wday_names: %w[söndag måndag tisdag onsdag torsdag fredag lördag],
         wday_abbrs: %w[sön mån tis ons tor fre lör],
