@@ -137,15 +137,17 @@ describe R18n::Translation do
   it 'inspects translation' do
     en = R18n.locale('en')
 
-    translation = R18n::Translation.new(
-      en, 'a', locale: en, translations: { 'a' => 'A' }
-    )
-    expect(translation.inspect).to eq('Translation `a` for en {"a"=>"A"}')
+    translations = { 'a' => 'A' }
 
     translation = R18n::Translation.new(
-      en, '', locale: en, translations: { 'a' => 'A' }
+      en, 'a', locale: en, translations:
     )
-    expect(translation.inspect).to eq('Translation root for en {"a"=>"A"}')
+    expect(translation.inspect).to eq("Translation `a` for en #{translations}")
+
+    translation = R18n::Translation.new(
+      en, '', locale: en, translations:
+    )
+    expect(translation.inspect).to eq("Translation root for en #{translations}")
 
     translation = R18n::Translation.new(en, '')
     expect(translation.inspect).to eq('Translation root for en {}')
