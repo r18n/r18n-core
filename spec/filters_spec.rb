@@ -192,6 +192,15 @@ describe R18n::Filters do
     expect(i18n.params('0', '1')).to eq('Is 0 between 0 and 1?')
   end
 
+  it 'processes 2+ digits params in translation' do
+    expect(
+      i18n.a_lot_of_params(
+        'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+        'eleven', 'twelve'
+      )
+    ).to eq('List: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve!')
+  end
+
   it "substitutes '%2' as param but not value of second param" do
     expect(i18n.params('%2 FIRST', 'SECOND')).to eq(
       'Is %2 FIRST between %2 FIRST and SECOND?'
