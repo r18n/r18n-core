@@ -64,7 +64,7 @@ module R18n
     def respond_to_missing?(name, *)
       return super unless @base
 
-      @base.send __method__, name, *
+      @base.send(__method__, name, *)
     end
   end
 end
