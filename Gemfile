@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'activesupport', '>= 5', '< 8'
+  gem 'activesupport', '>= 5', '<= 8.0.2'
   gem 'kramdown', '~> 2.3'
   gem 'pry-byebug', '~> 3.9'
   gem 'RedCloth', '~> 4.3'
