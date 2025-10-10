@@ -37,5 +37,5 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 3.2', '< 3.5'
 
-  s.add_dependency 'bigdecimal', '~> 3.1'
+  s.add_dependency 'bigdecimal', '3.3.1'
 end
