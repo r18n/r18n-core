@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 6.0.0 (Нови Сад) (2026-02-17)
+
+* Drop Ruby 2.5, 2.6, 2.7, 3.0 and 3.1 support.
+* Add Ruby 3.2, 3.3, 3.4 and 4.0 support.
+* Add Arabic language.
+* Add a Sv locale.
+* Remove English from Swedish sublocales.
+* Add `bigdecimal` runtime dependency.
+* Fix bug with caching in `:variables` filter.
+* Update development dependencies.
+* Resolve new RuboCop offenses.
+* Improve CI config.
+
 ## 5.0.1 (Ą) (2021-03-04)
 
 * Update version 5 ChangeLog to more complete and actual.
