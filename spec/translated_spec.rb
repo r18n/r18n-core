@@ -4,6 +4,7 @@ describe R18n::Translated do
   let(:user_class) do
     Class.new do
       include R18n::Translated
+
       attr_accessor :name_ru, :name_en
 
       def name_ru?; end

@@ -31,7 +31,7 @@ module R18n
           0
         elsif number == 1
           1
-        elsif number >= 2 && number <= 4
+        elsif number.between? 2, 4
           2
         else
           'n'

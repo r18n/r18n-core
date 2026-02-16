@@ -201,10 +201,10 @@ module R18n
     end
 
     Filters.defined         = {}
-    Filters.by_type         = Hash.new([])
-    Filters.active_enabled  = Hash.new([])
-    Filters.passive_enabled = Hash.new([])
-    Filters.enabled         = Hash.new([])
+    Filters.by_type         = Hash.new { |hash, key| hash[key] = [] }
+    Filters.active_enabled  = Hash.new { |hash, key| hash[key] = [] }
+    Filters.passive_enabled = Hash.new { |hash, key| hash[key] = [] }
+    Filters.enabled         = Hash.new { |hash, key| hash[key] = [] }
 
     Filter = Struct.new(:name, :types, :block, :enabled, :passive) do
       def call(*params)
