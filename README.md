@@ -477,7 +477,7 @@ If you want to send a pull request:
 * Create `%{code}.yml` file for your language in the `base/` directory and
   translate the base messages. Just copy file from language, which you know,
   and rewrite values.
-* Send a pull request via GitHub <http://github.com/r18n/r18n> or just write
+* Send a pull request via GitHub <http://github.com/r18n/r18n-core> or just write
   email with the files to [Andrey Sitnik](mailto:andrey@sitnik.ru)
   or [Alexander Popov](mailto:alex.wayfer@gmail.com).
 
