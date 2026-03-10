@@ -11,7 +11,7 @@ group :development do
   gem 'RedCloth', '~> 4.3'
 
   gem 'gem_toys', '~> 1.0'
-  gem 'toys', '~> 0.19.0'
+  gem 'toys', '~> 0.20.0'
 end
 
 group :lint do
